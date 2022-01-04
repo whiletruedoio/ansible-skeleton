@@ -1,0 +1,16 @@
+---
+# roles/{{ role_name }}/handlers/main.yml
+
+- name: "Restart {{ role_name }} Service"
+  ansible.builtin.service:
+    name: "{{ '{{' }} {{ role_name }}_service_name {{ '}}' }}"
+    state: "restarted"
+  become: true
+  when:
+    - "{{ role_name }}_package_state != 'absent'"
+  tags:
+    - "{{ role_name }}"
+    - "package"
+    - "configuration"
+    - "service"
+...

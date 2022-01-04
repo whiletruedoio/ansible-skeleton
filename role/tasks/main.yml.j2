@@ -1,0 +1,75 @@
+---
+# roles/{{ role_name }}/tasks/main.yml
+
+## Package Management
+
+- name: "Manage {{ role_name }} Packages"
+  ansible.builtin.package:
+    name: "{{ '{{' }} {{ role_name }}_package_names {{ '}}' }}"
+    state: "{{ '{{' }} {{ role_name }}_package_state {{ '}}' }}"
+  become: true
+  notify:
+    - "Restart {{ role_name }} Service"
+  tags:
+    - "{{ role_name }}"
+    - "package"
+
+## Configuration Management
+
+- name: "Manage {{ role_name }} Configuration"
+  ansible.builtin.template:
+    src: "{{ '{{' }} {{ role_name }}_config_src {{ '}}' }}"
+    dest: "{{ '{{' }} {{ role_name }}_config_dest {{ '}}' }}"
+    owner: "{{ '{{' }} {{ role_name }}_config_owner {{ '}}' }}"
+    group: "{{ '{{' }} {{ role_name }}_config_group {{ '}}' }}"
+    mode: "{{ '{{' }} {{ role_name }}_config_mode {{ '}}' }}"
+  become: true
+  notify:
+    - "Restart {{ role_name }} Service"
+  tags:
+    - "{{ role_name }}"
+    - "configuration"
+
+## Service Management
+
+- name: "Manage {{ role_name }} Services"
+  ansible.builtin.service:
+    name: "{{ '{{' }} {{ role_name }}_service_name {{ '}}' }}"
+    state: "{{ '{{' }} {{ role_name }}_service_state {{ '}}' }}"
+    enabled: "{{ '{{' }} {{ role_name }}_service_enabled {{ '}}' }}"
+  become: true
+  when:
+    - "{{ role_name }}_package_state != 'absent'"
+  tags:
+    - "{{ role_name }}"
+    - "package"
+
+## Firewall Management
+
+- name: "Gather package Facts"
+  ansible.builtin.package_facts:
+
+- name: "Manage {{ role_name }} Firewall Policy"
+  ansible.posix.firewalld:
+    service: "{{ '{{' }} {{ role_name }}_firewall_service {{ '}}' }}"
+    state: "{{ '{{' }} {{ role_name }}_firewall_state {{ '}}' }}"
+    zone: "{{ '{{' }} {{ role_name }}_firewall_zone {{ '}}' }}"
+    immediate: "{{ '{{' }} {{ role_name }}_firewall_immediate {{ '}}' }}"
+    permanent: "{{ '{{' }} {{ role_name }}_firewall_permanent {{ '}}' }}"
+  become: true
+  when:
+    - "'firewalld' in ansible_facts.packages"
+  tags:
+    - "{{ role_name }}"
+    - "firewall"
+
+## Checks
+
+- name: "Import Checks for {{ role_name }}"
+  ansible.builtin.import_tasks: "check.yml"
+  when:
+    - "{{ role_name }}_checks_enabled | bool"
+  tags:
+    - "{{ role_name }}"
+    - "check"
+...

@@ -1,0 +1,10 @@
+---
+# roles/{{ role_name }}/tasks/check.yml
+
+- name: "Check {{ role_name }}"
+  ansible.builtin.assert:
+    that: false
+  tags:
+    - "{{ role_name }}"
+    - "check"
+...

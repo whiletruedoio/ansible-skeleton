@@ -1,0 +1,34 @@
+---
+# roles/{{ role_name }}/defaults/main.yml
+
+## Package Management
+
+{{ role_name }}_package_names: ""
+{{ role_name }}_package_state: "present"
+
+## Configuration Management
+
+{{ role_name }}_config_src: ""
+{{ role_name }}_config_dest: ""
+{{ role_name }}_config_owner: ""
+{{ role_name }}_config_group: ""
+{{ role_name }}_config_mode: ""
+
+## Service Management
+
+{{ role_name }}_service_name: ""
+{{ role_name }}_service_state: "started"
+{{ role_name }}_service_enabled: true
+
+## Firewall Management
+
+{{ role_name }}_firewall_service: ""
+{{ role_name }}_firewall_state: "enabled"
+# {{ role_name }}_firewall_zone: ""
+{{ role_name }}_firewall_immediate: true
+{{ role_name }}_firewall_permanent: true
+
+## Checks
+
+{{ role_name }}_checks_enabled: false
+...

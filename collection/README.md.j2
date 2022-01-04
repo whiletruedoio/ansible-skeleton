@@ -1,0 +1,196 @@
+<!--
+reference: https://www.makeareadme.com/
+reference: https://commonmark.org/
+-->
+
+[![Cirrus CI - Base Branch Build Status](https://img.shields.io/cirrus/github/whiletruedoio/{{ namespace }}.{{ collection_name }}?logo=Cirrus-ci)](https://cirrus-ci.com/github/whiletruedoio/{{ namespace }}.{{ collection_name }})
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/whiletruedoio/{{ namespace }}.{{ collection_name }}?logo=GitHub&label=Release&sort=semver)](https://github.com/whiletruedoio/{{ namespace }}.{{ collection_name }}/releases)
+[![GitHub issues](https://img.shields.io/github/issues/whiletruedoio/{{ namespace }}.{{ collection_name }})](https://github.com/whiletruedoio/{{ namespace }}.{{ collection_name }}/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/whiletruedoio/{{ namespace }}.{{ collection_name }})](https://github.com/whiletruedoio/{{ namespace }}.{{ collection_name }}/pulls)
+[![GitHub license](https://img.shields.io/github/license/whiletruedoio/{{ namespace }}.{{ collection_name }})](https://github.com/whiletruedoio/{{ namespace }}.{{ collection_name }}/blob/main/LICENSE)
+
+# Ansible - {{ namespace }}.{{ collection_name }}
+
+<!-- Short Description -->
+
+## Motivation
+
+<!-- TODO: Motivation
+
+This section describes the motivation to create the collection.
+
+Why is it needed?
+Why is it useful?
+-->
+
+## Description
+
+<!-- TODO: Description
+
+This section describes the collection itself.
+
+What is the collection about?
+Which problem is solved?
+What is included?
+
+### Plugins
+
+- [](plugins/)
+
+### Roles
+
+- [](roles/)
+
+### Playbooks
+
+- [](playbooks/)
+-->
+
+## Usage
+
+We are really happy, that you consider using our software. In case you want to
+install and run the code on your machine, please check out this section.
+
+### Requirements
+
+<!-- TODO: Requirements
+
+This section describes what one needs to run the code in production.
+
+If your collection depends on another role or collection, please maintain the
+requirements.yml and provide an installation example.
+
+```shell
+# Install required roles and collections
+
+$ ansible-galaxy install -r requirements.yml
+```
+-->
+
+### Install
+
+Installing an Ansible collection can be done in multiple ways. Below, you can
+find some examples via `ansible-galaxy` and `git`.
+
+#### Via Ansible Galaxy
+
+This is the most common way for users and will install the collection in the
+proper directories.
+
+```sh
+# Install
+$ ansible-galaxy collection install {{ namesapce }}.{{ collection_name }}
+
+# Install a specific version
+$ ansible-galaxy collection install {{ namesapce }}.{{ collection_name }}
+
+# Update
+$ ansible-galaxy collection install {{ namesapce }}.{{ collection_name }}
+
+# Remove
+$ ansible-galaxy collection install {{ namesapce }}.{{ collection_name }}
+```
+
+#### Via Git Repository
+
+For development purposes, you can also clone the repository and copy it to your
+desired location.
+
+```sh
+# Clone
+$ git clone https://github.com/whiletruedoio/{{ namespace }}.{{ collection_name }}.git
+
+# Update
+$ cd /path/to/repository
+$ git pull
+```
+
+### Documentation
+
+<!-- TODO: Documentation
+
+This section describes how to use this collection and where to find additional
+documentation.
+
+First steps after the installation?
+Important things the user/admin should know?
+Could you provide examples to use the code?
+Were to find additional documentation?
+
+Optional: Use and link docs/*.md files
+-->
+
+## Contribute
+
+Thank you so much for considering to contribute! We are happy, when someone is
+joining the hard work.
+
+### Issues
+
+Issues and Pull Requests are handled on a regular basis. Please be aware, that
+we may reach out to you, ask you to provide additional resources or want to
+discuss the issue a little, before planning it.
+
+- [Bugs and Feature Requests](https://github.com/whiletruedoio/{{ namespace }}.{{ collection_name }}/issues)
+- [Pull Requests](https://github.com/whiletruedoio/{{ namespace }}.{{ collection_name }}/pulls)
+
+### Develop
+
+Providing code to this repository is pretty straight forward. Open an issue,
+so we can discuss the bug/feature and start working on it afterwards. You just
+need to open the pull request afterwards and that's it.
+
+It is also strongly recommended to read the
+[Contribution Guideline](https://github.com/whiletruedoio/.github/blob/main/docs/CONTRIBUTING.md)
+beforehand.
+
+### Changelog
+
+We are maintaining a [changelog](CHANGELOG.md) for repositories. Normally, the
+developers will update the changelog, according to
+[keepachangelog.com](https://keepachangelog.com/).
+
+<!-- TODO: Changelog
+
+Please update and maintain the CHANGELOG.md
+-->
+
+### Test
+
+To ensure a high quality and functionality, we want to carefully test our
+software.
+
+<!-- TODO: Test
+
+Add your guideline, how to test.
+How to execute the tests locally?
+What is automatically done?
+
+You can use the given template in .cirrus.yml and add your tests to it.
+
+Optional: Use and link a docs/TEST.md
+Optional: Provide additional test scripts and helpers in tests/
+-->
+
+## License
+
+Except otherwise noted, all work is [licensed](LICENSE) under a
+[BSD-3-Clause License](https://opensource.org/licenses/BSD-3-Clause).
+
+<!-- TODO: License
+
+Adapt the LICENSE to your needs.
+-->
+
+## Contact
+
+Please feel free to reach out to us and the community. We also recommend to read
+and understand the
+[Code of Conduct](https://github.com/whiletruedoio/.github/blob/main/docs/CODE_OF_CONDUCT.md)
+beforehand.
+
+- Site: <https://while-true-do.io>
+- Blog: <https://blog.while-true-do.io>
+- Code: <https://github.com/whiletruedoio>
+- Chat: [libera.chat #whiletruedoio](https://web.libera.chat/gamja/#whiletruedo)
+- Mail: [hello@while-true-do.io](mailto:hello@while-true-do.io)
