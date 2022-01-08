@@ -54,10 +54,12 @@ Now, change to your project directory and create a new collection or role.
 
 ```sh
 # Create a collection
-$ ansible-galaxy collection init --collection-skeleton /path/to/skeleton/collection collection_name
+$ ansible-galaxy collection init \
+    --collection-skeleton /path/to/skeleton/collection collection_name
 
 # Create a role
-$ ansible-galaxy role init --role-skeleton /path/to/skeleton/role role_name
+$ ansible-galaxy role init \
+    --role-skeleton /path/to/skeleton/role role_name
 ```
 
 Unfortunately, there is no easy way to persist this for now. Please check the
