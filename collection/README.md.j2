@@ -79,16 +79,16 @@ proper directories.
 
 ```sh
 # Install
-$ ansible-galaxy collection install {{ namesapce }}.{{ collection_name }}
+$ ansible-galaxy collection install {{ namespace }}.{{ collection_name }}
 
 # Install a specific version
-$ ansible-galaxy collection install {{ namesapce }}.{{ collection_name }}
+$ ansible-galaxy collection install {{ namespace }}.{{ collection_name }}
 
 # Update
-$ ansible-galaxy collection install {{ namesapce }}.{{ collection_name }}
+$ ansible-galaxy collection install {{ namespace }}.{{ collection_name }}
 
 # Remove
-$ ansible-galaxy collection install {{ namesapce }}.{{ collection_name }}
+$ ansible-galaxy collection install {{ namespace }}.{{ collection_name }}
 ```
 
 #### Via Git Repository
@@ -158,7 +158,25 @@ Please update and maintain the CHANGELOG.md
 ### Test
 
 To ensure a high quality and functionality, we want to carefully test our
-software.
+software. The provided code is automatically tested as described in the
+[.cirrus.yml](.cirrus.yml).
+
+Each plugin, role and playbook provides tests, located in
+[tests/](./tests/). The below example demonstrates, how you can use them.
+
+```shell
+# Run linting test in Docker/Podman
+$ ansible-test sanity --lint --docker
+
+# Run only yamllint in Docker/Podman
+$ ansible-test sanity --test yamllint --docker
+
+# Run integration tests in Docker/Podman
+$ ansible-test integration --docker fedora34
+
+# Run a specific integration test in Docker/Podman
+$ ansible-test integration --docker fedora34 role_myrole
+```
 
 <!-- TODO: Test
 
