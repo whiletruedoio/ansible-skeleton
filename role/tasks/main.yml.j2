@@ -42,18 +42,22 @@
     - "{{ role_name }}_package_state != 'absent'"
   tags:
     - "{{ role_name }}"
-    - "package"
+    - "service"
 
 ## Firewall Management
 
 - name: "Gather package Facts"
   ansible.builtin.package_facts:
+    manager: "auto"
+  tags:
+    - "{{ role_name }}"
+    - "package"
 
 - name: "Manage {{ role_name }} Firewall Policy"
   ansible.posix.firewalld:
     service: "{{ '{{' }} {{ role_name }}_firewall_service {{ '}}' }}"
     state: "{{ '{{' }} {{ role_name }}_firewall_state {{ '}}' }}"
-    zone: "{{ '{{' }} {{ role_name }}_firewall_zone {{ '}}' }}"
+    zone: "{{ '{{' }} {{ role_name }}_firewall_zone | default(omit) {{ '}}' }}"
     immediate: "{{ '{{' }} {{ role_name }}_firewall_immediate {{ '}}' }}"
     permanent: "{{ '{{' }} {{ role_name }}_firewall_permanent {{ '}}' }}"
   become: true

@@ -5,7 +5,10 @@ reference: https://commonmark.org/
 
 # Ansible - {{ role_name }}
 
-<!-- Short Description -->
+<!-- Short Description
+
+An Ansible role to install and configure ...
+-->
 
 ## Motivation
 
@@ -34,17 +37,11 @@ install and run the code on your machine, please check out this section.
 
 This section describes what one needs to run the code in production.
 
+You should at least define the requirements for control nodes and managed
+nodes (ex.: the supported operating system).
+
 Please mention all dependencies on the control node and/or managed node. Please
 also check, if a special Ansible Version is needed on the control node.
-
-Lastly, if your role depends on another role or collection, please maintain the
-requirements.yml and provide an installation example.
-
-```shell
-# Install required roles and collections
-
-$ ansible-galaxy install -r requirements.yml
-```
 -->
 
 ### Install
@@ -53,18 +50,14 @@ $ ansible-galaxy install -r requirements.yml
 
 This section describes how to install the Ansible Role. Please link the proper
 collection, if the role is bundled in one.
+
+If your role depends on another role or collection, please maintain the
+requirements.yml and provide an installation example.
 -->
 
 ### Documentation
 
 Below you can find some simple examples and specs for the role.
-
-<!-- TODO: Documentation
-
-This section describes how to use the Ansible Role. Please provide at least an
-introduction sentence, an example and link to special files like meta/main.yml,
-meta/argument_specs.yml or defaults/main.yml.
--->
 
 #### Arguments
 
@@ -123,3 +116,4 @@ beforehand.
 - Code: <https://github.com/whiletruedoio>
 - Chat: [libera.chat #whiletruedoio](https://web.libera.chat/gamja/#whiletruedo)
 - Mail: [hello@while-true-do.io](mailto:hello@while-true-do.io)
+

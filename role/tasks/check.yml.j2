@@ -1,6 +1,13 @@
 ---
 # roles/{{ role_name }}/tasks/check.yml
 
+- name: "Gather package Facts"
+  ansible.builtin.package_facts:
+    manager: "auto"
+  tags:
+    - "{{ role_name }}"
+    - "firewall"
+
 - name: "Check {{ role_name }}"
   ansible.builtin.assert:
     that: false
