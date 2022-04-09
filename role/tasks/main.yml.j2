@@ -69,7 +69,7 @@
 
 ## Checks
 
-- name: "Import Checks for {{ role_name }}"
+- name: "Import check Tasks"
   ansible.builtin.import_tasks: "check.yml"
   when:
     - "{{ role_name }}_checks_enabled | bool"
